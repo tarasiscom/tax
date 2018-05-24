@@ -10,13 +10,22 @@ namespace TaxCalculator
   {
     static void Main(string[] args)
     {
-      Console.Write("Enter Basic Salary : ");
-      var basicSalary =  Convert.ToDouble(Console.ReadLine());
-      Console.Write("Enter Current Salary : ");
-      var currentSalary= Convert.ToDouble(Console.ReadLine());
+      try
+      {
+        Console.Write("Enter Basic Salary : ");
+        var basicSalary = Convert.ToDouble(Console.ReadLine());
+        Console.Write("Enter Current Salary : ");
+        var currentSalary = Convert.ToDouble(Console.ReadLine());
+        var userSalaryInformation = new Salary(basicSalary, currentSalary);
+        userSalaryInformation.OutputSalaryInformation();
+      }
+      catch (Exception e)
+      {
+        Console.WriteLine(e);
+      }
+     
 
-      var userSalaryInformation = new Salary(basicSalary, currentSalary);
-      userSalaryInformation.OutputSalaryInformation();
+      
 
       Console.ReadKey();
     }
