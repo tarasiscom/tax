@@ -19,13 +19,17 @@ namespace TaxCalculator
         var userSalaryInformation = new Salary(basicSalary, currentSalary);
         userSalaryInformation.OutputSalaryInformation();
       }
+      catch (FormatException e)
+      {
+        Console.WriteLine("You should enter numbers!!!");
+      }
       catch (Exception e)
       {
         Console.WriteLine(e);
       }
-     
 
-      
+
+
 
       Console.ReadKey();
     }
